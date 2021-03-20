@@ -1,20 +1,27 @@
-<html>
+---
+layout: default
+title: Home
+---
 
-<body>
-<svg width="640" height="480" xmlns="http://www.w3.org/2000/svg">
- <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
- <g>
-  <title></title>
-  <ellipse rx="1" id="svg_2" cy="208" cx="542" stroke-opacity="0" stroke-width="5" stroke="#000000" fill="#FF0000"/>
-  <ellipse ry="120" rx="120" id="svg_7" cy="232.5" cx="317" stroke-opacity="0" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="#000000"/>
-  <ellipse id="svg_9" stroke="#000000" stroke-opacity="0" ry="65.000001" rx="65.000001" cy="239.987191" cx="314.480725" stroke-width="5" fill="#4784c1"/>
-  <ellipse stroke="#000000" transform="rotate(-1 304.5 228.5)" ry="8.104258" rx="9.946729" id="svg_12" cy="228.5" cx="304.5" stroke-opacity="0" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" fill="#000000"/>
-  <path id="svg_17" d="m260.420013,204.788254l30.500488,-53.375122l30.499512,53.375122l-61,0z" stroke-opacity="0" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="#4784c1"/>
-  <path id="svg_18" d="m338.795013,158.183105l0.5,-0.874985l0.5,0.874985l-1,0z" stroke-opacity="0" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="#4784c1"/>
-  <path transform="rotate(14 351 181.5)" id="svg_21" d="m320.5,208.187561l30.500488,-53.375122l30.499512,53.375122l-61,0z" stroke-opacity="0" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="5" stroke="#000000" fill="#4784c1"/>
- </g>
-</svg>
+{% include intro.html %}
 
-<a href="https://dbacarel.github.io/webgl_tryouts/shapes/demo.html">Shapes</a>
-</body>
-</html>
+<section class="post-list">
+  <div class="container">
+    {% for post in site.posts %}
+      {% unless post.next %}
+        <h2 class="category-title">{{ post.date | date: '%Y' }}</h2>
+      {% else %}
+        {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
+        {% capture nyear %}{{ post.next.date | date: '%Y' }}{% endcapture %}
+        {% if year != nyear %}
+          <h2 class="category-title">{{ post.date | date: '%Y' }}</h2>
+        {% endif %}
+      {% endunless %}
+      <article class="post-item">
+        <span class="post-meta date-label">{{ post.date | date: "%b %d" }}</span>
+        <div class="article-title"><a class="post-link" href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">{{ post.title }}</a></div>
+      </article>
+    {% endfor %}
+  </div>
+
+</section>

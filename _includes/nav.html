@@ -1,0 +1,16 @@
+
+<nav class="nav">
+  <div class="container">
+    <div>
+      <img height="64" width="64" style="float: left" src="{{ "/assets/images/logo_64x64.png" | prepend: site.baseurl | prepend: site.url }}" />
+      <h1 class="logo" style="vertical-align: baseline;">
+        <a href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">{{ site.title_left }}<span>{{ site.title_right }}</span></a>
+      </h1>
+    </div>
+
+    <ul class="navbar">
+      <li><a href="{{ '/about' | prepend: site.baseurl | prepend: site.url }}">About me</a></li>
+      <li><a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" target="_blank">RSS</a></li>
+    </ul>
+  </div>
+</nav>
