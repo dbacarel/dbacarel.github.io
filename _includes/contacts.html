@@ -1,0 +1,18 @@
+{% if site.data.contacts %}
+<section id="contacts">
+    <div class="container" style="text-align: center;">
+        {% assign sm = site.data.contacts %}
+        {% for entry in sm %}
+            {% assign key = entry | first %}
+                <a
+                    href="{{ sm[key].href }}"
+                    title="{{ sm[key].title }}">
+                    <img
+                        height="64px"
+                        width="64px"
+                        src="{{ "/assets/images/"  | prepend: site.baseurl | prepend: site.url | append: sm[key].icon}}" />
+                </a>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}

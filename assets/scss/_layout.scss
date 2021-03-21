@@ -74,7 +74,7 @@ hr {
   min-height: 96px;
 }
 
-.intro {
+.intro, .projects {
   .author-name {
     display: inline-block;
     padding: 0 .2em;
@@ -89,6 +89,7 @@ hr {
     padding-bottom: 0;
   }
 }
+
 
 .logo {
   float: left;

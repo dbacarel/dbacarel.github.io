@@ -1,0 +1,12 @@
+twitter:
+  title: 'Twitter'
+  href: 'https://twitter.com/Parsivalus'
+  icon: 'twitter_64x64.png'
+github:
+  title: 'GitHub'
+  href: 'https://github.com/dbacarel'
+  icon: 'github_64x64.png'
+linkedin:
+  title: 'Linkedin'
+  href: 'https://www.linkedin.com/in/danielebacarella'
+  icon: 'linkedin_64x64.png'
